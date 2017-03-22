@@ -1,0 +1,201 @@
+/* --------------------------------------------- */
+
+@desktop:   ~"only screen and (min-width: 960px) and (max-width: 1199px)";
+
+/* --------------------------------------------- */
+/* FONTS */
+
+@font-face 
+{
+    font-family:                                'SourceSansPro-Regular';
+    src: local('SourceSansPro-Regular'), local('SourceSansPro-Regular'), url('../fonts/SourceSansPro-Regular.ttf') format('truetype');
+    font-weight:                                normal;
+    font-style:                                 normal;
+}
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* LESS DEFINITIONS */
+
+// colors
+
+@white:                             #ffffff;
+@black:                             #000000;
+@red:                               #e54017;
+
+// images 
+
+@theme-image-root:                  "../img/";
+
+// header
+
+@pb:                                "@{theme-image-root}/pb.png";
+@shoe:                              "@{theme-image-root}/shoe_s.jpg";
+
+/* --------------------------------------------- */
+/* BACKGROUND SHORTHAND */
+
+.background-options(@option_size, @option_repeat, @option_position)
+{
+	background-size:				@option_size;
+	background-repeat: 				@option_repeat;
+	background-position: 			@option_position;
+}
+
+/* --------------------------------------------- */
+/* GLOBAL OPACITY HOVER */
+
+.global-hover
+{
+    opacity:                        0.6;
+}
+
+/* --------------------------------------------- */
+/* PREFIX BUNDELS */
+
+.transition-option(@option_transition_webkit, @option_transition, @option_transition_duration, @option_transition_delay)
+{
+    -webkit-transition:             @option_transition_webkit;
+    transition:                     @option_transition;
+
+    -webkit-transition-duration:     @option_transition_duration;
+    transition-duration:             @option_transition_duration;
+
+    -webkit-transition-delay:       @option_transition_delay;
+    transition-delay:               @option_transition_delay;
+}
+
+.transform-option(@option_transform)
+{
+	-webkit-transform:				@option_transform;
+	transform:						@option_transform;
+}
+
+.user-select-option(@option_select)
+{
+    -webkit-user-select:            @option_select;
+    -moz-user-select:               @option_select;
+    -ms-user-select:                @option_select;
+    user-select:                    @option_select;
+}
+
+/* --------------------------------------------- */
+/* ANIMATION */
+
+/* KEYFRAMES */
+
+@-webkit-keyframes flip-in
+{
+    0%
+    {
+        -webkit-transform:              translate3d(0, 22px, 0);
+    }
+
+    100%
+    {
+        -webkit-transform:              translate3d(0, 0, 0);
+    }
+}
+
+@keyframes flip-in
+{
+    0%
+    {
+        transform:                      translate3d(0, 22px, 0);
+    }
+
+    100%
+    {
+        transform:                      translate3d(0, 0, 0);
+    }
+}
+
+/* PROPERTIES */
+
+.animation(@animation_name, @animation_duration, @animation_fill_mode, @animation_delay)
+{
+    -webkit-animation-name:         @animation_name;
+    -webkit-animation-duration:     @animation_duration;
+    -webkit-animation-fill-mode:    @animation_fill_mode;
+    -webkit-animation-delay:        @animation_delay;
+
+    animation-name:                 @animation_name;
+    animation-duration:             @animation_duration;
+    animation-fill-mode:            @animation_fill_mode;
+    animation-delay:                @animation_delay;
+}
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* DEFAULTS */
+
+html, body, header, footer, section, nav, div, span, p, a, ul, li, h1, h2, h3, h4, h5, h6, label, input[type="text"], input[type="password"], input[type="email"], input[type="submit"], input[type="reset"], textarea, form
+{
+    display:                        block;
+    margin:                         0;
+    padding:                        0;
+    outline:                        none;
+    text-decoration:                none;
+    font-family:                    'SourceSansPro-Semibold', Helvetica, Arial, Sans-Serif;
+    font-size:                      9pt;
+    color:                          inherit;
+    -webkit-tap-highlight-color:    transparent;
+    -webkit-font-smoothing:         antialiased;
+    -moz-osx-font-smoothing:        grayscale;
+    .user-select-option             (none);
+}
+
+html, body
+{
+    background-color:               #fcfcf9;
+}
+
+body
+{
+
+}
+
+header
+{
+    display: block;
+    height: 66px;
+    width: 100%;
+    background-color: #ccc;
+
+    h1
+    {
+        text-align: center;
+        font-size: 16px;
+        line-height: 66px;
+    }
+}
+
+nav
+{
+
+}
+
+.content-wrapper
+{
+    width: 400px;
+    height: 660px;
+    margin: 0 auto;
+    padding: 0 44px;
+    box-sizing: border-box;
+    display: block;
+    background-color: rgba(0,0,0,0.4);
+    -webkit-transition:             opacity, 0.3s;
+    transition:                     opacity, 0.3s;
+}
+
+footer
+{
+
+}
+
+form
+{
+    input[type="email"], input[type="text"], input[type="submit"], input[type="reset"], input[name="firstname"], input[name="lastname"], textarea
+    {
+    }
+}
